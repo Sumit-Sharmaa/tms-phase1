@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- google font links -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <!-- font icons link -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+  <!-- style sheets -->
+  <link rel="stylesheet" href="style.css" />
+  <title>DooDoo. - A to-do app</title>
+</head>
+
+<body>
+  <header>
+    <h1>Doo<span>Doo.</span></h1>
+    <div>
+      <span class="material-symbols-outlined" onclick="searchTasksAndSubtasks(searchType, searchValue)"> search </span>
+      <input type="text" id="input" placeholder="Search tasks ... " />
+    </div>
+
+    <select id="searchType">
+      <option id="byName" value="By-Name"> By Name</option>
+      <option id="byStatus" value="By-status">By status</option>
+    </select>
+  </header>
+  <section id="mainSection">
+
+
+    <form id="taskForm">
+      <h1>ENTER TASKS</h1>
+      <div>
+        <div>
+          <label for="taskId">Task Id:</label><br>
+          <input type="number" name="taskId" id="taskId"  required />
+          <!-- <input type="number" name="taskIdInput" id="taskIdInput" placeholder="Enter Task Id" required /> -->
+        </div>
+        <input type="hidden" name="taskId" id="subTaskId" placeholder="Enter Sub Task Id" required />
+        <div>
+          <label for="taskName">Task Name:</label><br>
+          <input type="text" id="taskName" placeholder="Enter Task Name" required>
+        </div>
+        <div>
+          <label for="startDate">Start Date:</label><br>
+          <input type="date" id="startDate" required>
+        </div>
+        <div>
+          <label for="endDate">End Date:</label><br>
+          <input type="date" id="endDate" required>
+        </div>
+        <div>
+          <label for="status">Status:</label><br>
+          <select id="status" required>
+            <option value="null">--Select value--</option>
+            <option id="Inprocess" value="In-Progress">In-Progress</option>
+            <option id="Completed" value="Completed">Completed</option>
+            <option id="DuePassed" value="DuePassed">DuePassed</option>
+            <option id="Canceled" value="Canceled">Canceled</option>
+          </select><br>
+        </div>
+      </div>
+      <button type="button" id="addButton" onclick="addTask()">Add Task</button>
+      <button type="button" id="updateButton" onclick="updateTask()" style="display: none;">Update Task</button>
+      <button type="reset" id="resetButton">Reset Values</button>
+    </form>
+    <section id="taskSection">
+      <h1>Tasks List</h1>
+      <!-- Task items will be dynamically added here -->
+      <!-- <div class="infoHeader">
+        <p>Id</p>
+        <p>Name</p>
+        <p>Start-Date</p>
+        <p>End-Date</p>
+        <p>Status</p>
+      </div> -->
+
+      <div class="taskConatiner">
+        <ul id="taskList">
+        </ul>
+    </section>
+  </section>
+  <script src="script.js"></script>
+  <!-- <script src="validation.js"></script> -->
+</body>
+
+</html>

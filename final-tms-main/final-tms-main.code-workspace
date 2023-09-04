@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Downloads/TaskManager_javascript-main (1)/TaskManager_javascript-main"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "final-tms-main"
+	}
+}
